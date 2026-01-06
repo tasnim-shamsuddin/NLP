@@ -1,60 +1,72 @@
 # SMS Spam Classification using NLP
 
-## 📌 Project Overview
-This project focuses on building an **SMS Spam Classification system** using **Natural Language Processing (NLP)** techniques.  
-The objective is to classify SMS messages as **Spam** or **Ham (Not Spam)** based on their textual content.
-
-The dataset used is the **SMSSpamCollection**, which contains labeled SMS messages.
+## 📌 Project Description
+This project implements an **SMS Spam Classification system** using **Natural Language Processing (NLP)** techniques.  
+The goal is to classify SMS messages as **Spam** or **Ham (Not Spam)** by converting raw text into meaningful numerical features and applying machine learning algorithms.
 
 ---
 
-## 📂 Dataset
-- **Name:** SMSSpamCollection  
-- **Format:** Tab-separated text file  
-- **Columns:**
-  - `label` → spam / ham  
-  - `message` → SMS text  
+## 🧹 Data Cleaning & Text Preprocessing
+Text preprocessing was performed using the **NLTK** library to improve model performance and reduce noise in the data.  
+The following steps were applied:
+
+- Conversion of text to lowercase
+- Removal of punctuation and special characters
+- Tokenization of text
+- **Stopword removal** to eliminate commonly used but non-informative words
+- **Stemming using Porter Stemmer** to reduce words to their root form
+
+These steps help in standardizing the text and reducing dimensionality.
 
 ---
 
-## 🛠️ Current Work (In Progress)
-✔️ Data loading and inspection  
-✔️ Text preprocessing (lowercasing, cleaning, tokenization)  
-✔️ **Feature extraction using Bag of Words (CountVectorizer)**  
+## 🔢 Feature Engineering
 
-🔄 Currently working on:
-- Building numerical representations of text using **Bag of Words**
-- Preparing features for machine learning models
+### 📘 Bag of Words (BoW)
+Initially, the text data was transformed using the **Bag of Words** model.
 
----
+- Bag of Words is a **text encoding technique** that converts textual data into numerical vectors
+- It represents text based on the **frequency of words**, ignoring grammar and word order
+- A vocabulary is created from the corpus, and each message is represented as a vector
 
-## 🔍 NLP Techniques Used
-- Text cleaning
-- Tokenization
-- Stopword removal
-- **Bag of Words (BoW)** representation
+This step allowed the conversion of preprocessed text into machine-readable numerical features.
 
 ---
 
-## 🚀 Planned Next Steps
-- Apply **TF-IDF Vectorization**
-- Train classification models:
-  - Naive Bayes
-  - Logistic Regression
-- Model evaluation using:
+### 📗 TF-IDF (Currently Implementing)
+The project is now being extended using **TF-IDF (Term Frequency–Inverse Document Frequency)** vectorization.
+
+- TF-IDF improves upon Bag of Words by **reducing the weight of frequently occurring words**
+- It assigns higher importance to words that are more meaningful to a particular document
+- Helps in handling high-frequency but less informative terms
+
+🚧 **Currently working on implementing TF-IDF vectors and training models using these features**
+
+---
+
+## 🚀 Next Steps
+- Train machine learning models (Naive Bayes, Logistic Regression)
+- Compare performance between **Bag of Words** and **TF-IDF**
+- Evaluate models using:
+  - Accuracy
   - Confusion Matrix
-  - Accuracy, Precision, Recall, F1-score
+  - Precision, Recall, F1-score
 
 ---
 
-## 🧰 Technologies & Libraries
+## 🧰 Tools & Libraries Used
 - Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
+- Pandas, NumPy  
 - NLTK  
+- Scikit-learn  
 - Jupyter Notebook  
+- VS Code  
 
 ---
+
+## ✍️ Author
+**Tasnim Shamsuddin**  
+Aspiring Data Scientist | NLP & Machine Learning Enthusiast
+
 
 
