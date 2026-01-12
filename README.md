@@ -1,72 +1,101 @@
-# SMS Spam Classification using NLP
+🧠 Problem Statement
 
-## 📌 Project Description
-This project implements an **SMS Spam Classification system** using **Natural Language Processing (NLP)** techniques.  
-The goal is to classify SMS messages as **Spam** or **Ham (Not Spam)** by converting raw text into meaningful numerical features and applying machine learning algorithms.
+Spam messages are unsolicited and often harmful. Automatically detecting spam helps improve user experience and protects users from fraud. This project applies NLP techniques to efficiently identify spam messages from SMS data.
 
----
+📂 Dataset
 
-## 🧹 Data Cleaning & Text Preprocessing
-Text preprocessing was performed using the **NLTK** library to improve model performance and reduce noise in the data.  
-The following steps were applied:
+The dataset consists of labeled SMS messages classified as Spam or Ham.
 
-- Conversion of text to lowercase
-- Removal of punctuation and special characters
-- Tokenization of text
-- **Stopword removal** to eliminate commonly used but non-informative words
-- **Stemming using Porter Stemmer** to reduce words to their root form
+Each message is processed and transformed into numerical features suitable for machine learning models.
 
-These steps help in standardizing the text and reducing dimensionality.
+🔧 Data Cleaning & Preprocessing
 
----
+The following preprocessing steps were applied to the text data:
 
-## 🔢 Feature Engineering
+✅ Conversion of text to lowercase
 
-### 📘 Bag of Words (BoW)
-Initially, the text data was transformed using the **Bag of Words** model.
+✅ Removal of punctuation and special characters
 
-- Bag of Words is a **text encoding technique** that converts textual data into numerical vectors
-- It represents text based on the **frequency of words**, ignoring grammar and word order
-- A vocabulary is created from the corpus, and each message is represented as a vector
+✅ Tokenization (splitting text into individual words)
 
-This step allowed the conversion of preprocessed text into machine-readable numerical features.
+✅ Lemmatization to reduce words to their base form
 
----
+✅ Removal of unnecessary symbols and noise
 
-### 📗 TF-IDF (Currently Implementing)
-The project is now being extended using **TF-IDF (Term Frequency–Inverse Document Frequency)** vectorization.
+⚠️ Important Note on Data Leakage
+Before applying Bag of Words or TF-IDF, the dataset was first split into training and testing sets. Feature extraction was performed only on the training data, and then applied to the test data. This approach prevents data leakage, ensuring that the model does not gain prior information from the test set during training.
 
-- TF-IDF improves upon Bag of Words by **reducing the weight of frequently occurring words**
-- It assigns higher importance to words that are more meaningful to a particular document
-- Helps in handling high-frequency but less informative terms
+⚙️ Feature Engineering
 
-🚧 **Currently working on implementing TF-IDF vectors and training models using these features**
+To convert textual data into numerical form, the following techniques were used:
 
----
+1️⃣ Bag of Words (BoW)
 
-## 🚀 Next Steps
-- Train machine learning models (Naive Bayes, Logistic Regression)
-- Compare performance between **Bag of Words** and **TF-IDF**
-- Evaluate models using:
-  - Accuracy
-  - Confusion Matrix
-  - Precision, Recall, F1-score
+Represents text by counting word occurrences
 
----
+Simple and effective for baseline models
 
-## 🧰 Tools & Libraries Used
-- Python  
-- Pandas, NumPy  
-- NLTK  
-- Scikit-learn  
-- Jupyter Notebook  
-- VS Code  
+2️⃣ TF-IDF (Term Frequency–Inverse Document Frequency)
 
----
+Measures word importance across documents
 
-## ✍️ Author
-**Tasnim Shamsuddin**  
-Aspiring Data Scientist | NLP & Machine Learning Enthusiast
+Reduces the impact of commonly used words
 
+Improves model performance compared to BoW
 
+🤖 Model Used
+
+Naive Bayes Classifier
+
+Chosen for its simplicity, speed, and strong performance in text classification tasks such as spam detection
+
+📊 Model Evaluation
+
+The model performance was evaluated using the following metrics:
+
+📈 Accuracy – Overall correctness of the model
+
+🎯 Precision – Accuracy of spam predictions
+
+🔄 Confusion Matrix – Detailed classification results
+
+Evaluation was performed for both:
+
+Bag of Words features
+
+TF-IDF features
+
+TF-IDF provided improved and more reliable performance compared to Bag of Words.
+
+🚀 Results
+
+The model successfully classifies SMS messages into Spam and Ham.
+
+TF-IDF with Naive Bayes achieved better precision and accuracy.
+
+Demonstrates the effectiveness of NLP preprocessing and feature engineering techniques.
+
+🛠️ Technologies Used
+
+Python
+
+Natural Language Processing (NLP)
+
+Scikit-learn
+
+Pandas & NumPy
+
+Naive Bayes Algorithm
+
+📌 Conclusion
+
+This project showcases a complete NLP-based machine learning workflow for SMS spam detection. It highlights the importance of text preprocessing and feature extraction methods like TF-IDF in improving classification performance.
+
+📎 Future Enhancements
+
+Try advanced models like Logistic Regression, SVM, or Deep Learning
+
+Hyperparameter tuning
+
+Deployment as a web application or API
 
